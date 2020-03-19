@@ -4,7 +4,7 @@ from datetime import timedelta
 SENSOR_TYPES = {
     "gft": ["GFT", "mdi:recycle"],
     "papier": ["Oud Papier", "mdi:recycle"],
-    "pbd": ["PBD", "mdi:recycle"],
+    "pmd": ["PMD", "mdi:recycle"],
     "restafval": ["Restafval", "mdi:recycle"],
     "textiel": ["Textiel", "mdi:recycle"],
     "trash_type_today": ["Today", "mdi:recycle"],
