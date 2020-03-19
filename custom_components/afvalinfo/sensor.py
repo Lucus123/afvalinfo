@@ -169,7 +169,7 @@ class AfvalinfoData(object):
             self.data = MeppelAfval().get_data(
                 self.city, self.postcode, self.street_number
             )
-        mijnafvalwijzer = ["de meern", "haarzuilens", "utrecht", "vleuten", "werkendam"]
+        mijnafvalwijzer = ["de meern", "haarzuilens", "utrecht", "vleuten", "werkendam", "wijk bij duurstede"]
         if self.city in mijnafvalwijzer:
             self.data = MijnAfvalWijzerAfval().get_data(
                 self.city, self.postcode, self.street_number
