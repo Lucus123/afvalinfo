@@ -20,7 +20,7 @@ If you like my work, please buy me a coffee. This will keep me awake :)
 
 ##### --(MijnAfvalWijzer) Utrecht, Werkendam
 ###### WARNING! Might not work well at the end of the year / beginning of the next year
-- de meern, haarzuilens, utrecht, vleuten, werkendam
+- de meern, haarzuilens, utrecht, vleuten, werkendam, wijk bij duurstede
 
 ##### --(Rova) Aalten, Amersfoort, Bunschoten, Dalfsen, Dinkelland, Hardenberg, Heerde, Olst-Wijhe, Ommen, Oost Gelre, Raalte, Staphorst, Steenwijkerland, Tubbergen, Twenterand, Urk, Westerveld, Winterswijk, Woudenberg, Zwartewaterland, Zwolle
 ###### WARNING! Might not work well at the end of the year / beginning of the next year
@@ -53,10 +53,10 @@ If you like my work, please buy me a coffee. This will keep me awake :)
 ##### --Vijfheerenlanden
 - ameide, everdingen, hagestein, hei- en boeicop, hoef en haag, kedichem, leerbroek, leerdam, lexmond, meerkerk, nieuwland, oosterwijk, ossenwaard, schoonrewoerd, tienhoven aan de lek, vianen, zijderveld
 
-##### --Westerkwartier                    (does not support: pbd)
+##### --Westerkwartier                    (does not support: pmd)
 - aduard, boerakker, briltil, de wilp, den ham_, den horn, doezum, enumatil, ezinge, feerwerd, garnwerd, grijpskerk, grootegast, jonkersvaart, kommerzijl, kornhorn, lauwerzijl, leek, lettelbert, lucaswolde, lutjegast, marum, midwolde, niebert, niehove, niekerk, niezijl, noordhorn, noordwijk, nuis, oldehove, oldekerk, oostwold, opende, pieterzijl, saaksum, sebaldeburen, tolbert, visvliet, zevenhuizen, zuidhorn
 
-##### --Westland                          (does not support: pbd, textiel)
+##### --Westland                          (does not support: pmd, textiel)
 - de lier, honselersdijk, kwintsheul, maasdijk, monster, naaldwijk, poeldijk, s-gravenzande, ter heijde, wateringen
 
 ### Add cities
@@ -72,7 +72,7 @@ Example config:
   sensor:
     - platform: afvalinfo
       resources:                       (at least 1 required)
-        - pbd
+        - pmd
         - trash_type_today
       city: sliedrecht                 (required, default = sliedrecht)
       postcode: 33361AB                (required, default = 3361AB)
@@ -84,24 +84,24 @@ Example config:
 Above example has 1 normal resource and one special resource. Here is a complete list of available waste fractions:
 - gft                                  (groente, fruit, tuinafval)
 - papier
-- pbd                                  (plastic, blik, drinkpakken)
+- pmd                                  (plastic, metaal, drinkpakken)
 - restafval
 - textiel
 
 Here is a complete list of special resources. To make these resources work, you also need to specify one or more of the normal resources from above.
-So if you only specify -pbd and -trash_type_today under your resources, you will only get a result if the trash type 'pbd' has the same date as today. If you also want to know if -gft has the same date as today, you also need to specify - gft under resources, as shown below.
+So if you only specify -pmd and -trash_type_today under your resources, you will only get a result if the trash type 'pmd' has the same date as today. If you also want to know if -gft has the same date as today, you also need to specify - gft under resources, as shown below.
 ```Configuration.yaml:
   sensor:
     - platform: afvalinfo
       resources:
-        - pbd
+        - pmd
         - gft
         - trash_type_today
       city: sliedrecht
       postcode: 33361AB
       streetnumber: 1
 ```
-These resources will return one or more (seperated with a space) of the following results (gft, papier, pbd, restafval, textiel).
+These resources will return one or more (seperated with a space) of the following results (gft, papier, pmd, restafval, textiel).
 - trash_type_today                     (only gives a result if minimal one of the normal resources dates is today)
 - trash_type_tomorrow                  (only gives a result if minimal one of the normal resources dates is tomorrow)
 
